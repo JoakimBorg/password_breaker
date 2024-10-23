@@ -32,8 +32,6 @@ def program():
 
     print('(test) det riktiga lösenordet är: ' + bot_password)
 
-    # if (len(contained_characters) != 0 ):
-    #  print("dessa karaktärer är rätt men på fel plats: " + ', '.join(contained_characters))
   
     if (user_password == bot_password):
       user_won = True
