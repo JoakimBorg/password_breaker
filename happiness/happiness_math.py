@@ -12,7 +12,7 @@ y = round(multiplier(0), 4)
 z = round(divisor(0), 4)
 
 asd = 0.5 * y
-asd2
+asd2 = asd * z
 
 print(asd)
 print(asd2)
