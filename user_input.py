@@ -1,5 +1,5 @@
 from utils.constants import MERGED_LIST
-
+from utils.constants import PASSWORD_LENGTH
 character_list = MERGED_LIST.copy()
 
 # INPUT: Användarens gissningar med kontroll om det är rätt antal tecken
@@ -12,10 +12,10 @@ def user_input():
     user_string = input('Din gissning: ')
     user_string_lowercase = user_string.lower()
 
-    # Startar om loopen om antal tecken användaren skrivit in inte är 6
-    if len(user_string_lowercase) != 6:
+    # Startar om loopen om antal tecken användaren skrivit in inte är (längden på lösenordet)
+    if len(user_string_lowercase) != PASSWORD_LENGTH:
       print('')
-      print('BOT: Du ska ju använda 6 tecken.')
+      print('BOT: Du ska ju använda '+ PASSWORD_LENGTH + ' tecken.')
       print('BOT: Är det så svårt att förstå!?')
       print('')
       continue
@@ -24,7 +24,7 @@ def user_input():
     approved_characters = ''
     i = 0
 
-    while i < 6:
+    while i < PASSWORD_LENGTH:
       for x in range(0, len(character_list)):
         if user_string_lowercase[i] == character_list[x]:
           approved_characters += 'o'

@@ -4,7 +4,10 @@ from info_user_lost import info_user_lost
 from menu_play_again import menu_play_again
 from password_generator import password_generator
 from rounds import rounds
+from guess_compare import guess_compare
 from utils.constants import NUMBER_OF_ROUNDS
+#from utils.constants import PASSWORD_LENGTH
+
 
 # PROGRAM: Programmets rundor och övergripande logik
 def program():
@@ -12,6 +15,8 @@ def program():
   # Lösenorden
   bot_password = password_generator()
   user_password = '******'
+  contained_characters = []
+  known_password = "******"
 
   # Antal rundor och boolean för om användaren vunnit hej
   current_round = 1
@@ -22,10 +27,14 @@ def program():
 
   # LOGIK: Loop som spelar rundor så länge användaren inte vunnit eller rundorna tagit slut
   while (current_round <= NUMBER_OF_ROUNDS) and (user_won == False):
-    user_password = rounds(current_round, user_password)
+    user_password = rounds(current_round, user_password, known_password, contained_characters)
+    known_password, contained_characters = guess_compare(user_password, bot_password, known_password, contained_characters)
 
-    print('BOTs lösenord: ' + bot_password)
+    print('(test) det riktiga lösenordet är: ' + bot_password)
 
+    # if (len(contained_characters) != 0 ):
+    #  print("dessa karaktärer är rätt men på fel plats: " + ', '.join(contained_characters))
+  
     if (user_password == bot_password):
       user_won = True
 

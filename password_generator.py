@@ -1,6 +1,5 @@
 import random
-from utils.constants import NUMBERS_LIST, LETTERS_LIST
-
+from utils.constants import NUMBERS_LIST, LETTERS_LIST, PASSWORD_LENGTH
 # Logik för att generera antingen bokstäver eller siffror
 def character_generator(list):
   random_number = random.randint(0, len(list) - 1)
@@ -13,12 +12,13 @@ def password_generator():
   numbers = NUMBERS_LIST.copy()
   letters = LETTERS_LIST.copy()
 
-  # Variabler att generera 6 tecken
+
+  # Variabler att generera (password length) tecken
   password = ''
   i = 0
 
   # Loop som skickar tillbaka antingen en siffra eller en bokstav
-  while i < 6:
+  while i < PASSWORD_LENGTH:
     i += 1
     number_or_letter = random.randint(0, 1)
     
