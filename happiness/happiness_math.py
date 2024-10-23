@@ -1,18 +1,17 @@
 correct_answers_count = 0
 wrong_answers_count = 0
-difference = correct_answers_count - wrong_answers_count
+
+k = 0.8
 
 def multiplier(exponent):
-  return 1 + 0.2 * 0.8 ** exponent
+  return 1 + 0.2 * k ** exponent
 
 def divisor(exponent):
-  return 0.5 + 0.25 / 0.8 ** exponent
+  return 1 + 0.25 * k ** exponent
 
-y = round(multiplier(0), 4)
-z = round(divisor(0), 4)
+m = round(multiplier(0), 4)
+d = round(divisor(0), 4)
 
-asd = 0.5 * y
-asd2 = asd * z
-
-print(asd)
-print(asd2)
+print(m)
+print(0.5 * m)
+#print(0.5 / d)
