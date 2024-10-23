@@ -1,13 +1,14 @@
 # Happiness scale (hs)
 # 0.5 < hs < 1 --> BOT blir gladare eftersom användaren gissar fel
 # 0 < hs < 0.5 --> BOT blir argare eftersom användaren gissar rätt
-happiness_scale = 0.6
+happiness_scale = 0.5
 
 # Variabler som håller reda på rätt antal gissningar i rad.
 correct_answers_count = 0
 wrong_answers_count = 0
 
-bot_happy_exponent = 2
+# Variabler som ökar exponentvärdet beroende på antal gissningar rätt/fel i rad
+bot_happy_exponent = 0
 bot_angry_exponent = 0
 
 # Funktioner för att kalkylera multiplikator/divisor
@@ -48,3 +49,5 @@ def happiness_math(last_answer_correct):
   return happiness_scale
 
 x = happiness_math(True)
+
+# ToDo: Inte helt färdig, ska sy ihop den sista logiken.
