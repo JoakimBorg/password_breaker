@@ -15,7 +15,7 @@ def user_input():
     # Startar om loopen om antal tecken användaren skrivit in inte är (längden på lösenordet)
     if len(user_string_lowercase) != PASSWORD_LENGTH:
       print('')
-      print('BOT: Du ska ju använda '+ PASSWORD_LENGTH + ' tecken.')
+      print('BOT: Du ska ju använda '+ str(PASSWORD_LENGTH) + ' tecken.')
       print('BOT: Är det så svårt att förstå!?')
       print('')
       continue
