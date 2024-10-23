@@ -13,7 +13,7 @@ def program():
   bot_password = password_generator()
   user_password = '******'
 
-  # Antal rundor och boolean för om användaren vunnit
+  # Antal rundor och boolean för om användaren vunnit hej
   current_round = 1
   user_won = False
 
