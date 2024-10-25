@@ -41,13 +41,19 @@ def happiness_math(last_answer_correct):
   elif last_answer_correct == True and happiness_scale < 0.5:
     bot_angry_exponent += 1
 
-  if last_answer_correct:
-    happiness_scale = divider(bot_angry_exponent, happiness_scale)
-  elif last_answer_correct == False:
-    happiness_scale = multiplier(bot_happy_exponent, happiness_scale)
+  if last_answer_correct == False and happiness_scale < 0.5:
+    bot_angry_exponent -= 1
+  elif last_answer_correct == True and happiness_scale >= 0.5:
+    bot_happy_exponent -= 1
 
-  return happiness_scale
+  # Caluclation
+#  if last_answer_correct == True:
+#    happiness_scale = divider(bot_angry_exponent, happiness_scale)
+#  elif last_answer_correct == False:
+#    happiness_scale = multiplier(bot_happy_exponent, happiness_scale)
 
-x = happiness_math(True)
+#  return happiness_scale
+
+happiness_math(True)
 
 # ToDo: Inte helt färdig, ska sy ihop den sista logiken.
