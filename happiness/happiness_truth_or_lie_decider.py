@@ -24,6 +24,10 @@ def happiness_truth_or_lie_decider(is_last_answer_correct):
   # Slumpvärdet och procents chans för sanning (0-100)
   percentage_chance_for_truth = sometimes_truth     # Standardprocentvärde är sometimes_truth
   percentage_random = random.randint(0, 100)
+  
+  print('chance: ' + str(percentage_chance_for_truth))
+  print('random: ' + str(percentage_random))
+  print()
 
   # Matcha slumvärdet med procentens chans
   if truth_or_lie_value >= always_truth:
