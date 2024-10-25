@@ -21,15 +21,15 @@ def divider(angry_exponent, scale):
   return round(scale / divisor, 4)
 
 # LOGIK: Tar input om gissningen var rätt eller inte och skickar tillbaka ett värde för HS
-def happiness_math(last_answer_correct):
+def happiness_math(is_last_answer_correct):
   global happiness_scale
   global bot_happy_exponent
   global bot_angry_exponent
 
   # Caluclation
-  if last_answer_correct == True:
+  if is_last_answer_correct == True:
     happiness_scale = divider(bot_angry_exponent, happiness_scale)
-  elif last_answer_correct == False:
+  elif is_last_answer_correct == False:
     happiness_scale = multiplier(bot_happy_exponent, happiness_scale)
 
   # Återställ exponenter när värdet rör sig över gränsen 0.5 (ok)
@@ -39,15 +39,15 @@ def happiness_math(last_answer_correct):
     bot_happy_exponent = 0
 
   # Höj exponentens värde vid rätt gissning och hs-värde (ok)
-  if last_answer_correct == False and happiness_scale >= 0.5:
+  if is_last_answer_correct == False and happiness_scale >= 0.5:
     bot_happy_exponent += 1
-  elif last_answer_correct == True and happiness_scale < 0.5:
+  elif is_last_answer_correct == True and happiness_scale < 0.5:
     bot_angry_exponent += 1
 
   # Sänk exponentens värde vid fel gissning och hs-värde
-  if last_answer_correct == False and happiness_scale < 0.5:
+  if is_last_answer_correct == False and happiness_scale < 0.5:
     bot_angry_exponent -= 1
-  elif last_answer_correct == True and happiness_scale >= 0.5:
+  elif is_last_answer_correct == True and happiness_scale >= 0.5:
     bot_happy_exponent -= 1
 
   return happiness_scale

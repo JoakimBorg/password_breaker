@@ -1,5 +1,6 @@
 import random
 from utils.constants import NUMBERS_LIST, LETTERS_LIST, PASSWORD_LENGTH
+
 # Logik för att generera antingen bokstäver eller siffror
 def character_generator(list):
   random_number = random.randint(0, len(list) - 1)
