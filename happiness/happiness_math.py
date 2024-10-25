@@ -1,19 +1,16 @@
-# Happiness scale (hs)
-# 0.5 < hs < 1 --> BOT blir gladare eftersom användaren gissar fel
-# 0 < hs < 0.5 --> BOT blir argare eftersom användaren gissar rätt
+# Happiness scale (HS)
+# 0.5 < HS < 1 --> BOT blir gladare eftersom användaren gissar fel
+# 0 < HS < 0.5 --> BOT blir argare eftersom användaren gissar rätt
 happiness_scale = 0.5
 
 # Variabler som ökar exponentvärdet beroende på antal gissningar rätt/fel i rad
 bot_happy_exponent = 0
 bot_angry_exponent = 0
 
-# Funktioner för att kalkylera multiplikator/divisor
+# LOGIK: Funktioner för att kalkylera multiplikator/divisor
 def multiplier(happy_exponent, scale):
   k_multiple = 0.7
   multiple = 1 + 0.2 * k_multiple ** happy_exponent
-
-  print()
-  print('BOT GETTING HAPPY: Multiplied by: ' + str(multiple))
 
   return round(scale * multiple, 4)
 
@@ -21,11 +18,9 @@ def divider(angry_exponent, scale):
   k_divisor = 0.7
   divisor = 1 + 0.25 * k_divisor ** angry_exponent
 
-  print()
-  print('BOT GETTING ANGRY: Divided by: ' + str(divisor))
-
   return round(scale / divisor, 4)
 
+# LOGIK: Tar input om gissningen var rätt eller inte och skickar tillbaka ett värde för HS
 def happiness_math(last_answer_correct):
   global happiness_scale
   global bot_happy_exponent
@@ -55,21 +50,4 @@ def happiness_math(last_answer_correct):
   elif last_answer_correct == True and happiness_scale >= 0.5:
     bot_happy_exponent -= 1
 
-  testing_dict = {
-    'Answer': 'Correct answer' if last_answer_correct else 'Wrong answer',
-    'Scale': happiness_scale,
-    'Happy exp': bot_happy_exponent,
-    'Angry: exp': bot_angry_exponent,
-  }
-
-  return testing_dict
-
-#  return happiness_scale
-
-hsA = happiness_math(True)
-hsB = happiness_math(False)
-hsC = happiness_math(False)
-
-print(hsC)
-
-# ToDo: Inte helt färdig, ska sy ihop den sista logiken.
+  return happiness_scale
