@@ -27,9 +27,3 @@ def clue_generator(password, known_characters):
         used_clues.append(random_number)
     else:
         clue_generator(password, known_characters)
-
-clue_generator("hej123", ['h','2','3'])
-clue_generator("hej123", ['h','2','3'])
-clue_generator("hej123", ['h','2','3'])
-clue_generator("hej123", ['h','2','3'])
-clue_generator("hej123", ['h','2','3'])

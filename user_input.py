@@ -39,7 +39,7 @@ def user_input():
     if approved_characters != 'oooooo':
       print('')
       print('BOT: Fel typ av tecken!')
-      print('BOT: Använd små bokstäver (a-z) och nummer (0-9). Kombinera dessa fritt.')
+      print('BOT: Använd små bokstäver (a-z) och nummer (1-9). Kombinera dessa fritt.')
       print('BOT: Okej!?')
       print('')
       continue

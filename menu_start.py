@@ -11,7 +11,7 @@ def menu_start():
   print('REGLER')
   print('')
   print('1. Du har ' + str(NUMBER_OF_ROUNDS) + ' antal rundor på dig att lista ut lösenordet')
-  print('2. Dina gissningar måste innehålla ' + str(PASSWORD_LENGTH) +' tecken med en blandning av små bokstäver (a-z) och siffror (0-9)')
+  print('2. Dina gissningar måste innehålla ' + str(PASSWORD_LENGTH) +' tecken med en blandning av små bokstäver (a-z) och siffror (1-9)')
   print('3. Du kommer att få ledtrådar från boten BOT')
   print('4. BOT vill absolut inte att du ska vinna, därför ljuger han ibland i ledtrådarna')
   print('')

@@ -27,10 +27,10 @@ def program():
 
   # LOGIK: Loop som spelar rundor så länge användaren inte vunnit eller rundorna tagit slut
   while (current_round <= NUMBER_OF_ROUNDS) and (user_won == False):
-    user_password = rounds(current_round, user_password, known_password, contained_characters)
+    user_password = rounds(current_round, user_password, known_password, contained_characters, bot_password)
     known_password, contained_characters = guess_compare(user_password, bot_password, known_password, contained_characters)
 
-    print('(test) det riktiga lösenordet är: ' + bot_password)
+ #   print('(test) det riktiga lösenordet är: ' + bot_password)
 
   
     if (user_password == bot_password):
