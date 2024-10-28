@@ -1,5 +1,4 @@
 from utils.constants import PASSWORD_LENGTH
-
  # returnernar en "******" sträng som visar korrekta bokstäver samt en lista med karaktärer som finns i ordet men är på fel plats
 def guess_compare(user_input, bot_password, known_password, contained_characters):
     

@@ -1,7 +1,5 @@
-from utils.constants import LETTERS_LIST
-from utils.constants import NUMBERS_LIST
 import random
-def clue_smallest_or_largest(password):
+def clue_smallest_or_largest(password, LETTERS_LIST, NUMBERS_LIST):
     number_or_letter = None
     smallest_or_largest = random.randint(0, 1)
     char = None
@@ -16,11 +14,11 @@ def clue_smallest_or_largest(password):
     if (smallest_or_largest == 0):
         for x in range(len(number_or_letter)):
             if(number_or_letter[x] in password):
-                return("tips: den minsta "+char+ " i lösenordet är "+ number_or_letter[x])
+                print("tips: den minsta "+char+ " i lösenordet är "+ number_or_letter[x])
+                return
     else:
         for x in range(len(number_or_letter)):
             if(number_or_letter[len(number_or_letter)-(x+1)] in password):
-                return("tips: den största "+char+ " i lösenordet är "+ number_or_letter[len(number_or_letter)-(x+1)])
+                print("tips: den största "+char+ " i lösenordet är "+ number_or_letter[len(number_or_letter)-(x+1)])
+                return
 
-
-print(clue_smallest_or_largest("hej123"))
