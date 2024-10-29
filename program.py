@@ -18,6 +18,7 @@ def program():
   user_password = '******'
   contained_characters = []
   known_password = "******"
+  last_guess_true_or_false = False
 
   # Antal rundor och boolean för om användaren vunnit hej
   current_round = 1
@@ -28,12 +29,15 @@ def program():
 
   # LOGIK: Loop som spelar rundor så länge användaren inte vunnit eller rundorna tagit slut
   while (current_round <= NUMBER_OF_ROUNDS) and (user_won == False):
-    user_password = rounds(current_round, user_password, known_password, contained_characters, bot_password, bot_false_password)
+    user_password = rounds(current_round, user_password, known_password, contained_characters, bot_password, bot_false_password, last_guess_true_or_false)
     known_password, contained_characters = guess_compare(user_password, bot_password, known_password, contained_characters)
 
- #   print('(test) det riktiga lösenordet är: ' + bot_password)
+    # Kollar om senaste gissningen hade rätt eller fel för happiness math
+    if (last_guess_true_or_false != known_password):
+      last_guess_true_or_false = True
+    else:
+      last_guess_true_or_false = False
 
-  
     if (user_password == bot_password):
       user_won = True
 

@@ -1,7 +1,7 @@
 from user_input import user_input
 from utils.constants import NUMBER_OF_ROUNDS
 from utils.constants import PASSWORD_LENGTH
-from clue_generator import clue_generator
+from clue_generator import clue_generator, clue_generator_truth_or_lie
 
 # INFO: Första rundan som visar spelregler
 def first_round():
@@ -15,7 +15,7 @@ def first_round():
   print('')
 
 # RUNDA: En vanlig runda som dessutom ändrar lite text vid sista rundan
-def normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password):
+def normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password, last_guess_true_or_false):
   if (round_number == NUMBER_OF_ROUNDS):
     print('SISTA RUNDAN! ' + str(round_number) + ' av ' + str(NUMBER_OF_ROUNDS))
   else:
@@ -24,7 +24,7 @@ def normal_round(round_number, last_user_guess, known_password, contained_charac
   if (round_number != 1):
     print('')
     print('BOT: Din senaste gissning var: ' + last_user_guess)
-    clue_generator(bot_password, contained_characters, bot_false_password)
+    clue_generator_truth_or_lie(bot_password, contained_characters, bot_false_password, last_guess_true_or_false)
 
 #skriver ut alla felplacerade karaktärer ifall det finns några
   if (len(contained_characters) != 0 ):
@@ -32,14 +32,14 @@ def normal_round(round_number, last_user_guess, known_password, contained_charac
   print('')
 
 # LOGIK: Rundornas logik
-def rounds(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password):
+def rounds(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password, last_guess_true_or_false):
   print('--------------------------------')
   print('')
 
   if (round_number == 1):
     first_round()
   
-  normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password)
+  normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password, last_guess_true_or_false)
 
   print('BOT: Lösenordet är ' + known_password)
   print('REMOVE THIS: ' + bot_password)
