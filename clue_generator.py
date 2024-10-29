@@ -7,9 +7,11 @@ from clues.clue_smallest_or_largest import clue_smallest_or_largest
 from clues.clue_sum import clue_sum
 from clues.clue_vowel_count import clue_vowel_count
 
+from happiness_truth_or_lie_decider import happiness_truth_or_lie_decider
+
 used_clues = []
 
-def clue_generator(password, known_characters):
+def clue_generator(password, known_characters, bot_false_password):
     global used_clues
 
     numbers = NUMBERS_LIST.copy()
@@ -34,3 +36,6 @@ def clue_generator(password, known_characters):
         used_clues.append(random_number)
     else:
         clue_generator(password, known_characters)
+
+x = happiness_truth_or_lie_decider(True)
+print(x)

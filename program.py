@@ -14,6 +14,7 @@ def program():
 
   # Lösenorden
   bot_password = password_generator()
+  bot_false_password = password_generator()
   user_password = '******'
   contained_characters = []
   known_password = "******"
@@ -27,7 +28,7 @@ def program():
 
   # LOGIK: Loop som spelar rundor så länge användaren inte vunnit eller rundorna tagit slut
   while (current_round <= NUMBER_OF_ROUNDS) and (user_won == False):
-    user_password = rounds(current_round, user_password, known_password, contained_characters, bot_password)
+    user_password = rounds(current_round, user_password, known_password, contained_characters, bot_password, bot_false_password)
     known_password, contained_characters = guess_compare(user_password, bot_password, known_password, contained_characters)
 
  #   print('(test) det riktiga lösenordet är: ' + bot_password)
@@ -56,4 +57,4 @@ while play_again == True:
 
 # INFO: Avslutat spelet
 print('')
-print('DET HÄR ÄR SLUTET.')
+print('DET HÄR ÄR SLUTET FÖR DIG OCH DINA SLÄKTINGAR.')
