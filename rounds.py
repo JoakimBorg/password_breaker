@@ -9,8 +9,7 @@ def first_round():
   print('BOT: Lösenordet är: ******')
   print('BOT: Jag vet att du inte är bra nog för att gissa mitt lösenord.')
   print('BOT: Men du kan ju försöka...')
-  print('BOT: ...din lilla tönt.')
-  print('BOT: Använd små bokstäver (a-z) och nummer (1-9).')
+  print('BOT: Använd små bokstäver (a-z) och nummer (0-9).')
   print('')
   print('--------------------------------')
   print('')
@@ -23,11 +22,13 @@ def normal_round(round_number, last_user_guess, known_password, contained_charac
     print('RUNDA ' + str(round_number) + ' av ' + str(NUMBER_OF_ROUNDS) + ':')
     
   if (round_number != 1):
+    print('')
     print('BOT: Din senaste gissning var: ' + last_user_guess)
     clue_generator(bot_password, contained_characters)
+
 #skriver ut alla felplacerade karaktärer ifall det finns några
   if (len(contained_characters) != 0 ):
-    print("kända karaktärer på okänd plats: " + ', '.join(contained_characters))
+    print("BOT: Dessa tecken ingår men är på fel plats: " + ', '.join(contained_characters))
   print('')
 
 # LOGIK: Rundornas logik
@@ -40,6 +41,7 @@ def rounds(round_number, last_user_guess, known_password, contained_characters, 
   
   normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password)
 
+  print('BOT: Lösenordet är ' + known_password)
   user_guess = user_input()
   
   return user_guess

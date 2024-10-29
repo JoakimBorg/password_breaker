@@ -14,11 +14,19 @@ def clue_smallest_or_largest(password, LETTERS_LIST, NUMBERS_LIST):
     if (smallest_or_largest == 0):
         for x in range(len(number_or_letter)):
             if(number_or_letter[x] in password):
-                print("tips: den minsta "+char+ " i lösenordet är "+ number_or_letter[x])
+                if (char == 'bokstaven'):
+                    print("LEDTRÅD: Bokstaven (" + number_or_letter[x] + ") finns i lösenordet och är den bokstav som är tagen FÖRST ur alfabetet")
+                    return
+                
+                print("LEDTRÅD: Den minsta "+char+ " i lösenordet är "+ number_or_letter[x])
                 return
     else:
         for x in range(len(number_or_letter)):
             if(number_or_letter[len(number_or_letter)-(x+1)] in password):
-                print("tips: den största "+char+ " i lösenordet är "+ number_or_letter[len(number_or_letter)-(x+1)])
+                if (char == 'bokstaven'):
+                    print("LEDTRÅD: Bokstaven (" + number_or_letter[x] + ") finns i lösenordet och är den bokstav som är tagen SIST ur alfabetet")
+                    return
+
+                print("LEDTRÅD: Den största "+char+ " i lösenordet är "+ number_or_letter[len(number_or_letter)-(x+1)])
                 return
 

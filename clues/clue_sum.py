@@ -3,5 +3,5 @@ def clue_sum(password):
     for char in password:
         if (char.isdigit()):
             sum+=int(char)
-    print ("tips: summan av alla siffror i lösenordet är "+str(sum))
+    print ("LEDTRÅD: Summan av alla siffror i lösenordet är "+str(sum))
     

@@ -8,10 +8,17 @@ from clues.clue_sum import clue_sum
 from clues.clue_vowel_count import clue_vowel_count
 
 used_clues = []
+
 def clue_generator(password, known_characters):
+    global used_clues
+
     numbers = NUMBERS_LIST.copy()
     letters = LETTERS_LIST.copy()
     random_number = random.randint(1, 5)
+
+    if (len(used_clues) >= 5):
+        used_clues = []
+
     if (random_number not in used_clues):
         match random_number:
             case 1:

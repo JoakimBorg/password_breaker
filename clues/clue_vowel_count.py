@@ -4,5 +4,5 @@ def clue_vowel_count(password):
     for x in password:
         if (x in vowels):
             vowel_count+=1
-    print ("tips: det finns "+str(vowel_count)+" vokaler i lösenordet")
+    print ("LEDTRÅD: Det finns "+str(vowel_count)+" vokaler i lösenordet")
 

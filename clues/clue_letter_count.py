@@ -7,5 +7,5 @@ def clue_letter_count(password, numbers):
             number_count+=1
         else:
             letter_count+=1
-    print ("tips: det finns "+str(letter_count)+ " bokstäver och " +str(number_count)+" siffor i lösenordet")
+    print ("LEDTRÅD: Det finns "+str(letter_count)+ " bokstäver och " +str(number_count)+" siffor i lösenordet")
 
