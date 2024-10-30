@@ -42,7 +42,7 @@ def rounds(round_number, last_user_guess, known_password, contained_characters, 
   normal_round(round_number, last_user_guess, known_password, contained_characters, bot_password, bot_false_password, last_guess_true_or_false)
 
   print('BOT: Lösenordet är ' + known_password)
-  print('REMOVE THIS: ' + bot_password)
+  #print('REMOVE THIS: ' + bot_password)
   user_guess = user_input()
   print('')
   

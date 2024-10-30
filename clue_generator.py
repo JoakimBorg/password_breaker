@@ -44,7 +44,7 @@ def clue_generator_truth_or_lie(password, known_characters, bot_false_password, 
 
     if (truth_or_lie_clue == 'TRUTH'):
         clue_generator(password, known_characters)
-    #    print(truth_or_lie_clue)
+        #print(truth_or_lie_clue)
     elif (truth_or_lie_clue == 'LIE'):
         clue_generator(bot_false_password, known_characters)
-    #    print(truth_or_lie_clue)
+        #print(truth_or_lie_clue)
