@@ -19,7 +19,7 @@ def user_input():
       print('')
       continue
     
-    # Kontroll att val av tecken är giltiga, dvs. tillhör bokstäver (a-z) och nummer (0-9)
+    # Kontroll att val av tecken är giltiga, dvs. tillhör bokstäver (a-z) och nummer (1-9)
     approved_characters = ''
     i = 0
 

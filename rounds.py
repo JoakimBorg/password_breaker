@@ -9,7 +9,7 @@ def first_round():
   print('BOT: Lösenordet är: ******')
   print('BOT: Jag vet att du inte är bra nog för att gissa mitt lösenord.')
   print('BOT: Men du kan ju försöka...')
-  print('BOT: Använd små bokstäver (a-z) och nummer (0-9).')
+  print('BOT: Använd små bokstäver (a-z) och nummer (1-9).')
   print('')
   print('--------------------------------')
   print('')
